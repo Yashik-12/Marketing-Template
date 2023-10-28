@@ -1,0 +1,597 @@
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+   html,
+   body,
+   div,
+   span,
+   applet,
+   object,
+   iframe,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   blockquote,
+   pre,
+   a,
+   abbr,
+   acronym,
+   address,
+   big,
+   cite,
+   code,
+   del,
+   dfn,
+   em,
+   img,
+   ins,
+   kbd,
+   q,
+   s,
+   samp,
+   small,
+   strike,
+   strong,
+   sub,
+   sup,
+   tt,
+   var,
+   b,
+   u,
+   i,
+   center,
+   dl,
+   dt,
+   dd,
+   ol,
+   ul,
+   li,
+   fieldset,
+   form,
+   label,
+   legend,
+   table,
+   caption,
+   tbody,
+   tfoot,
+   thead,
+   tr,
+   th,
+   td,
+   article,
+   aside,
+   canvas,
+   details,
+   embed,
+   figure,
+   figcaption,
+   footer,
+   header,
+   hgroup,
+   menu,
+   nav,
+   output,
+   ruby,
+   section,
+   summary,
+   time,
+   mark,
+   audio,
+   video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+   }
+   
+   /* HTML5 display-role reset for older browsers */
+   article,
+   aside,
+   details,
+   figcaption,
+   figure,
+   footer,
+   header,
+   hgroup,
+   menu,
+   nav,
+   section {
+     display: block;
+   }
+   
+   /* Force scrollbar */
+   html {
+     overflow-y: scroll;
+     scroll-behavior: smooth;
+   }
+   
+   /* Align radios and text inputs with their label */
+   
+   input[type="radio"] {
+     vertical-align: text-bottom;
+   }
+   
+   /* Hand cursor on clickable input elements */
+   label,
+   input[type="button"],
+   input[type="submit"],
+   button {
+     cursor: pointer;
+   }
+   
+   strong {
+     font-weight: bold;
+     font-family: inherit;
+     font-size: inherit;
+   }
+   
+   em {
+     font-style: italic;
+   }
+   
+   img {
+     width: 100%;
+     border: 0;
+     vertical-align: middle;
+   }
+   
+   sub,
+   sup {
+     vertical-align: baseline;
+     position: relative;
+     font-size: 55%;
+     line-height: 0;
+   }
+   
+   sup {
+     top: -0.7em;
+   }
+   sub {
+     bottom: -0.25em;
+   }
+   
+   /* 1.2. Clear Fix
+      ========================== */
+   
+   .cf:before,
+   .cf:after {
+     display: table;
+     content: " ";
+   }
+   
+   .cf:after {
+     clear: both;
+   }
+   .cf {
+     zoom: 1;
+   }
+   
+   /*for all*/
+   body {
+     box-sizing: border-box;
+     font-family: sans-serif;
+   }
+   
+   a {
+     display: inline-block;
+     text-decoration: none;
+   }
+   
+   li {
+     display: inline-block;
+     list-style-type: none;
+   }
+   
+   /*for wrapper*/
+   .wrapper {
+     max-width: 1360px;
+     width: 92.5%;
+     margin: 0 auto;
+   }
+   
+   /* Custom Css starts*/
+   
+   .common-heading {
+     display: flex;
+     justify-content: center;
+     margin-top: 5rem;
+     font-size: 2.2rem;
+   }
+   
+   .underline {
+     padding-bottom: 1.4rem;
+     border-bottom: 0.4rem solid #bababa;
+   }
+   /* Header CSS Starts*/
+   
+   header {
+     padding: 1rem;
+     background-color: #efefef;
+   }
+   
+   header nav ul {
+     display: flex;
+     justify-content: space-around;
+   }
+   
+   header nav ul .links a { color: #000; }
+   
+   nav ul .links::after {
+     content: "";
+     width: 0;
+     height: 2px;
+     background: #f44336;
+     display: block;
+     margin: auto;
+     transition: 0.5s;
+   }
+   
+   nav ul .links:hover::after { width: 100%; }
+
+   /* Header CSS Ends*/
+   
+   /* Home Section CSS Starts */
+   .home-section-container .home-main-heading {
+     margin-top: 3rem;
+     font-size: 2.5rem;
+     font-weight: 600;
+     text-transform: uppercase;
+   }
+   
+   .template-heading {
+     display: block;
+     margin-top: 1.2rem;
+   }
+   .bg-img { margin-top: 2.4rem; }
+   
+   .grey-div {
+     display: flex;
+     justify-content: space-between;
+     height: 3.9rem;
+     background-color: #676767;
+   }
+   
+   .grey-div .arrow-left a,
+   .grey-div .arrow-right a {
+     text-indent: 0;
+     margin: 1rem 1.2rem;
+     color: #fff;
+     transition: 0.6s;
+   }
+
+   .grey-div .arrow-left a:hover,
+   .grey-div .arrow-right a:hover { color: #c68100; }
+   
+   .grey-div .arrow-left a::after,
+   .grey-div .arrow-right a::after {
+     font-weight: 600;
+     font-family: "Font Awesome 6 Free";
+     font-size: 32px;
+     text-indent: -9999px;
+   }
+   
+   .grey-div .arrow-left .left-arrow-icon::after { content: "\f359"; }
+
+   .grey-div .arrow-right .right-arrow-icon::after { content: "\f35a"; }
+   
+   .slider-container {
+     display: flex;
+     justify-content: center;
+     margin-top: 1.3rem;
+   }
+   
+   .slider {
+     cursor: pointer;
+     height: 15px;
+     width: 15px;
+     margin: 0 2px;
+     background-color: #bababa;
+     display: inline-block;
+     border: 1px solid #fff;
+     background-color: #676767;
+     text-indent: -9999px;
+   }
+
+   .slider-container li:last-child a { background-color: #fff; }
+   
+   /* Home Section CSS Ends */
+   
+   /* What-we-offer-section CSS starts */
+   
+   .block-aligner {
+     display: flex;
+     justify-content: space-evenly;
+     margin-top: 3rem;
+   }
+
+   .block-aligner h3 { font-size: 1.9rem; }
+   
+   .block-aligner p {
+     margin-top: 1.7rem;
+     line-height: 1.5rem;
+   }
+   .design-block {
+     padding: 1.5rem;
+     background-color: #e7e7e7;
+   }
+   
+   .block-aligner .branding-block {
+     padding: 1.5rem;
+     background-color: #ababab;
+   }
+   
+   .block-aligner .consultation-block {
+     padding: 1.5rem;
+     background-color: #5c5c5c;
+     color: #fff;
+   }
+   
+   .block-aligner .promises-block {
+     padding: 1.5rem;
+     background-color: #131212;
+     color: #fff;
+   }
+   
+   /* What-we-offer-section CSS ends */
+   
+   /* Pricing Plans Section CSS Starts */
+   
+   .pricing-plans-heading {
+     display: flex;
+     justify-content: center;
+     margin-top: 2rem;
+     font-size: 2.2rem;
+   }
+   
+   .pricing-plans-text {
+     display: flex;
+     justify-content: center;
+     margin-top: 1.5rem;
+   }
+   
+   .pricing-heading {
+     display: flex;
+     justify-content: center;
+     margin-top: 1rem;
+   }
+
+   .black-bg {
+     padding: 1rem 4.8rem;
+     height: 4rem;
+     width: 50%;
+     background: #000;
+     color: #fff;
+   }
+   
+   .ul {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+   }
+   
+   .basic-block,
+   .pro-block,
+   .premium-block {
+     width: 50%;
+     padding: 2.09rem;
+   }
+   
+   .pro-block .pro-gray-bg {
+     height: 4rem;
+     padding: 3rem 4.8rem;
+     color: #ffffff;
+     padding: 1rem 4.8rem;
+     width: 50%;
+     background-color: #5c5c5c;
+   }
+   
+   ul .lists {
+     display: flex;
+     justify-content: center;
+     padding: 1rem;
+     font-size: 1rem;
+     border: 0.1px solid #bdbcbc;
+     width: 22vw;
+   }
+
+   .number-bold {
+     position: relative;
+     padding: 1rem;
+     font-size: 2.5rem;
+     margin: .7rem;
+     font-weight: normal;
+   }
+   .per-month-span {
+     position: absolute;
+     line-height: 1.6rem;
+   }
+   
+   .green-button a {
+     padding: 1rem;
+     border: 1.5px solid #02a802;
+     border-radius: 8px;
+     margin: 0.7rem;
+     width: 4rem;
+     background-color: #02a802;
+     color: #ffffff;
+     transition: 0.5s;
+   }
+   
+   .green-button {
+     display: flex;
+     justify-content: center;
+     padding: 1rem;
+     font-size: 1rem;
+     background-color: #ededed;
+     width: 22vw;
+     border: 0.1px solid #bdbcbc;
+   }
+   
+   .green-button a:hover {
+     background-color: #fff;
+     color: #02a802;
+   }
+   
+   .per-month-span {
+     display: flex;
+     font-size: 0.9rem;
+     color: #8a8a8a;
+     margin-top: 5rem;
+   }
+   
+   .bold-span {
+     display: flex;
+     justify-content: center;
+     font-weight: bold;
+     margin-right: 0.2rem;
+   }
+   
+   /* Pricing Plans Section CSS Ends */
+   
+   /* About us Section Starts */
+   
+   .block-aligner .img-block-1, 
+   .block-aligner .img-block-2,  
+   .block-aligner .img-block-3 {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+     transition: .3s;
+     width: 30%;
+   }
+   
+   .name-heading {
+     padding: 1rem;
+     font-size: 1rem;
+     margin-top: 1rem;
+   }
+   
+   .designation {
+     color: #808080;
+     padding: 1rem;
+   }
+   
+   .block-aligner .about-description { margin: 1rem; }
+
+   .contact {
+     display: flex;
+     justify-content: center;
+     margin: 1rem;
+     padding: 0.5rem 3rem;
+     font-size: 0.9rem;
+     background-color: #ececec;
+     cursor: pointer;
+     text-transform: capitalize;
+     transition: 0.8s;
+   }
+   
+   .contact:hover {
+     color: #ffffff;
+     background-color: #686868;
+   }
+   
+   /* About us Section Ends */
+   
+   /* Contact Section Starts */
+   .contact-us-form {
+     display: flex;
+     justify-content: flex-start;
+     margin-top: 2rem;
+     flex-direction: column;
+   }
+   
+   .contact-us-form .firtname,
+   .email,
+   .subject,
+   .message {
+     display: flex;
+     flex-direction: column;
+     height: 5rem;
+   }
+   
+   .firstname .input { padding: 2rem; }
+   
+   .contact-us-form .input-class { padding: .5rem; }
+   
+   .send-btn {
+     display: flex;
+     justify-content: center;
+     padding: 0.5rem;
+     color: #fff;
+     background-color: #000;
+   }
+   
+   .send-btn a { color: #fff; }
+   
+   /* Contact Section ends */
+   
+   /* Footer Section Starts */
+   footer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin-top: 5rem;
+     background-color: #ececec;
+   }
+   
+   footer h6 { margin-top: 3rem; }
+   
+   footer .to-the-top-button {
+     background-color: #000000;
+     margin-top: 2rem;
+   }
+   
+   footer .to-the-top-button a{
+     padding: 1rem;
+     color: #ffffff;
+   }
+    .to-the-top-button a::before{
+     content: "\f062";
+     font-weight: 600;
+     font-family: "Font Awesome 6 Free";
+     margin-right: .8rem;
+     color:#fff
+   }
+   
+   .last-link {
+     cursor: pointer;
+     text-decoration: underline;
+     transition: .2s;
+   }
+
+   .last-link:hover { color: #ff0e0e; }
+   .social-media-icons { margin-top: 2rem; }
+   
+   .social-media-icons li a::after {
+     font-weight: 600;
+     color: #000;
+     font-family: "Font Awesome 6 Brands";
+   }
+
+   .facebook:after { content: "\f09a"; }
+
+   .instagram:after { content: "\f16d"; }
+
+   .snapchat:after { content: "\f2ab"; }
+
+   .pinterest:after { content: "\f231"; }
+
+   .twitter:after { content: "\f099"; }
+   
+   .linkedin:after { content: "\f0e1"; }
+
+   .footer-last-txt {
+     margin-top: 1.5rem;
+     margin-bottom: 3rem;
+   }
+   
+   /* Footer Section Ends */
+
+
+
+   

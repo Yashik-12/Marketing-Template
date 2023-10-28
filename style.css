@@ -195,6 +195,8 @@
      margin: 0 auto;
    }
    
+   
+
    /* Custom Css starts*/
    
    .common-heading {
@@ -231,9 +233,20 @@
      margin: auto;
      transition: 0.5s;
    }
-   
-   nav ul .links:hover::after { width: 100%; }
 
+   .bar {
+    margin-top: 0;
+    width: 25px;
+    height: 2px;
+    margin: 5px 0;
+    display: block;
+    background-color: #000;
+    font-size: 0;
+    transition: all 0.3s;
+  }
+
+  .hamburger { display: none; }
+   
    /* Header CSS Ends*/
    
    /* Home Section CSS Starts */
@@ -264,9 +277,6 @@
      color: #fff;
      transition: 0.6s;
    }
-
-   .grey-div .arrow-left a:hover,
-   .grey-div .arrow-right a:hover { color: #c68100; }
    
    .grey-div .arrow-left a::after,
    .grey-div .arrow-right a::after {
@@ -303,10 +313,10 @@
    /* Home Section CSS Ends */
    
    /* What-we-offer-section CSS starts */
-   
+
    .block-aligner {
      display: flex;
-     justify-content: space-evenly;
+     justify-content: space-between;
      margin-top: 3rem;
    }
 
@@ -364,7 +374,6 @@
    .black-bg {
      padding: 1rem 4.8rem;
      height: 4rem;
-     width: 50%;
      background: #000;
      color: #fff;
    }
@@ -378,16 +387,19 @@
    .basic-block,
    .pro-block,
    .premium-block {
-     width: 50%;
-     padding: 2.09rem;
+     width: 100%;
+     height: 100%;
    }
-   
+  
+   .basic-block,
+   .pro-block,
+   .premium-block:not(:last-child) { padding-right: 2.09rem; }
+
    .pro-block .pro-gray-bg {
      height: 4rem;
      padding: 3rem 4.8rem;
      color: #ffffff;
      padding: 1rem 4.8rem;
-     width: 50%;
      background-color: #5c5c5c;
    }
    
@@ -397,7 +409,6 @@
      padding: 1rem;
      font-size: 1rem;
      border: 0.1px solid #bdbcbc;
-     width: 22vw;
    }
 
    .number-bold {
@@ -429,14 +440,11 @@
      padding: 1rem;
      font-size: 1rem;
      background-color: #ededed;
-     width: 22vw;
      border: 0.1px solid #bdbcbc;
    }
-   
-   .green-button a:hover {
-     background-color: #fff;
-     color: #02a802;
-   }
+  
+   .green-button a:active,
+   .contact:active { scale: .9 } 
    
    .per-month-span {
      display: flex;
@@ -461,7 +469,7 @@
    .block-aligner .img-block-3 {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
      transition: .3s;
-     width: 30%;
+     width: 32%;
    }
    
    .name-heading {
@@ -489,11 +497,6 @@
      transition: 0.8s;
    }
    
-   .contact:hover {
-     color: #ffffff;
-     background-color: #686868;
-   }
-   
    /* About us Section Ends */
    
    /* Contact Section Starts */
@@ -518,11 +521,12 @@
    .contact-us-form .input-class { padding: .5rem; }
    
    .send-btn {
+     padding: 0.5rem;
+     background-color: #000;
+     color: #fff;
      display: flex;
      justify-content: center;
-     padding: 0.5rem;
-     color: #fff;
-     background-color: #000;
+     cursor: pointer;
    }
    
    .send-btn a { color: #fff; }
@@ -564,7 +568,6 @@
      transition: .2s;
    }
 
-   .last-link:hover { color: #ff0e0e; }
    .social-media-icons { margin-top: 2rem; }
    
    .social-media-icons li a::after {
@@ -592,6 +595,110 @@
    
    /* Footer Section Ends */
 
+  /* Media Query Starts */
 
+  @media screen and (min-width: 995px){
+    nav ul .links:hover::after { width: 100%; }
 
+    .grey-div .arrow-left a:hover,
+    .grey-div .arrow-right a:hover { color: #c68100; }
+
+    .last-link:hover { color: #ff0e0e; }
+
+    .green-button a:hover {
+      background-color: #fff;
+      color: #02a802;
+    }
+
+    .contact:hover {
+      color: #ffffff;
+      background-color: #686868;
+    }
+  }
+
+  @media screen and (max-width: 995px) {
+    .basic-block, .pro-block, 
+    .premium-block:not(:last-child) { 
+      margin-bottom: 2rem;
+      padding-right: 1rem;
+    }
+
+    .basic-block,
+    .pro-block, 
+    .premium-block { 
+      flex-wrap: wrap;
+      width: 33%;
+    }
+}
    
+@media screen and (max-width: 768px){
+
+  .html-scroll { overflow-y: hidden; }
+
+  header { padding: 3rem; }
+
+  .hamburger{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    right: 5%;
+  }
+
+  .navlists li { font-size: 1.8rem; }
+
+   nav .active-nav { transform: translateY(0); }
+
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+        
+  .hamburger.active .bar:nth-child(1) {transform: translateY(7px) rotate(45deg);}
+  
+  .hamburger.active .bar:nth-child(3) {transform: translateY(-6px) rotate(-45deg);}
+
+  .navlists {
+    padding: 70px 2%;
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    transform: translateY(-100%);
+    transition: all .5s ease-in-out;
+}   
+
+ .navlists li:not(:last-child){ margin-bottom: 20px; }
+
+  .block-aligner { flex-direction: column; }
+
+  .basic-block,
+  .pro-block, 
+  .premium-block { 
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .block-aligner .img-block-1,
+  .block-aligner .img-block-2, 
+  .block-aligner .img-block-3 {
+    margin-bottom: 2rem; 
+    width: 100%;  
+    text-align: center;
+  }
+
+  .block-align-data {
+    display: flex;
+    align-items: center;
+  }
+
+  .block-aligner-info {
+    text-align: center;
+  }
+}
+
+  /* Media Query Ends */

@@ -107,7 +107,6 @@
    
    /* Force scrollbar */
    html {
-     overflow-y: scroll;
      scroll-behavior: smooth;
    }
    
@@ -195,7 +194,7 @@
      margin: 0 auto;
    }
    
-   
+   @viewport { width: device-width; }
 
    /* Custom Css starts*/
    
@@ -656,9 +655,8 @@
   .hamburger.active .bar:nth-child(3) {transform: translateY(-6px) rotate(-45deg);}
 
   .navlists {
-    padding: 70px 2%;
     width: 100%;
-    height: 30vh;
+    height: 50vh;
     position: absolute;
     top: 0;
     left:0;
@@ -671,6 +669,8 @@
     transform: translateY(-100%);
     transition: all .5s ease-in-out;
 }   
+
+ .underline { padding-bottom: 1rem;}
 
  .navlists li:not(:last-child){ margin-bottom: 20px; }
 

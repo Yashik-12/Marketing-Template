@@ -636,6 +636,8 @@
 
   header { padding: 3rem; }
 
+  header nav ul .links a { font-size: 1.5rem; }
+
   .hamburger{
     display: block;
     position: absolute;

@@ -547,14 +547,17 @@
    footer h6 { margin-top: 3rem; }
    
    footer .to-the-top-button {
-     background-color: #000000;
+     border: 2px solid #000;
+     background-color: #000;
      margin-top: 2rem;
+     transition: all .3s ease-in-out;
    }
    
    footer .to-the-top-button a{
      padding: 1rem;
-     color: #ffffff;
+     color: #fff;
    }
+
     .to-the-top-button a::before{
      content: "\f062";
      font-weight: 600;
@@ -570,6 +573,8 @@
    }
 
    .social-media-icons { margin-top: 2rem; }
+
+   .social-media-icons li:not(:last-child) { margin-right: 20px; }
    
    .social-media-icons li a::after {
      font-weight: 600;
@@ -605,6 +610,14 @@
     .grey-div .arrow-right a:hover { color: #c68100; }
 
     .last-link:hover { color: #ff0e0e; }
+
+    footer .to-the-top-button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    footer .to-the-top-button a:hover,
+    .to-the-top-button:hover a::before  { color: #000; }
 
     .green-button a:hover {
       background-color: #fff;

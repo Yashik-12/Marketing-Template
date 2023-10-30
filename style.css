@@ -108,6 +108,7 @@
    /* Force scrollbar */
    html {
      scroll-behavior: smooth;
+     overflow-x: hidden;
    }
    
    /* Align radios and text inputs with their label */

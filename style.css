@@ -649,7 +649,14 @@
 
   .html-scroll { overflow-y: hidden; }
 
-  header { padding: 3rem; }
+  header { 
+    padding: 3rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
 
   header nav ul .links a { font-size: 1.5rem; }
 
